@@ -6,7 +6,7 @@ export default function sendmail(req: NextApiRequest, res: NextApiResponse) {
     host: "smtp.gmail.com",
     port: 465,
     auth: {
-      user: "myroslav.kogut2007@gmail.com",
+      user: "alexb@sembrodesigns.com",
       pass: process.env.PASS,
     },
   });
@@ -17,7 +17,7 @@ export default function sendmail(req: NextApiRequest, res: NextApiResponse) {
 
   const toHostMailData = {
     from: `${req.body.firstName} ${req.body} ${req.body.email}`,
-    to: "myroslav.kogut2007@gmail.com",
+    to: "alexb@sembrodesigns.com",
     subject: `New Lead From Contact Form`,
     text: "Sent from:" + req.body.email,
     html: `
