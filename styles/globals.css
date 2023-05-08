@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    width: 20px;
+    height: 20px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: #f7f4ed;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: red;
+    border-radius: 100vh;
+    border: 3px solid #f6f7ed;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #c0a0b9;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.left_navbar {
+  height: calc(100vh - 40px);
+}
+
+
+body::-webkit-scrollbar-thumb {
+  background-color: #61718F;
+  border-radius: 6px;
+  border: 3px solid var(--scrollbarBG);
+}
+
+.carousel .slide img {
+  max-height: 700px; 
+  width: auto;
+}
+
+.box {
+  position: relative;
+  float: left;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 24px;
+  margin-right: 3%;
+}
+
+.box .icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s;
+  z-index: 1;
+  opacity: 1;
+}
+
+.box:hover .icon {
+  top: 10%;
+  transform: translate(-50%, -110%);
+  opacity: 0;
+}
+
+.box .icon .next-image {
+  transition: 0.5s;
+}
+
+/* .box:hover .icon .next-image {
+  width: 40px;
+  height: 40px;
+} */
+
+.box .content {
+  position: absolute;
+  bottom: -100%;
+  /* width: 100%; */
+  height: calc(100% - 20px);
+  text-align: center;
+  box-sizing: border-box;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.box:hover .content {
+  bottom: 0;
+  opacity: 1;
+}
+
+.box .content p {
+  padding: 0;
+  color: #000;
+  font-size: 16px;
+}
+
+.carousel .control-dots .dot.selected {
+  background: #61718F !important;
+}
+
+.bgg {
+  background: rgb(31,41,55);
+  background: linear-gradient(180deg, rgba(31,41,55,1) 47%, rgba(6,13,33,1) 100%);
+}
+
+
+.custom-dropdown-content {
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.carousel-height-xl {
+  height: 700px;
+}
+
+.carousel-height-lg {
+  height: 400px;
+}
+
+.carousel-height-sm {
+  height: 500px;
+}
+
+@media (max-width: 1023px) {
+  .carousel-height-xl {
+    height: 400px;
+  }
+}
+
+@media (max-width: 639px) {
+  .carousel-height-xl {
+    height: 600px;
+  }
+}
