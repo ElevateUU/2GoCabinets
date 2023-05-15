@@ -15,8 +15,7 @@ import CountertopMobile from "@/public/slider/mobileSlider/CountertopsMobile.svg
 import TruckMobile from "@/public/slider/mobileSlider/TruckMobile.svg";
 
 const MyCarousel = () => {
-  const { width } =
-    typeof window !== "undefined" ? useWindowSize() : { width: 0 };
+  const { width } = useWindowSize();
   const isMobile = width < 640;
 
   const desktopImages = [
@@ -38,7 +37,7 @@ const MyCarousel = () => {
       axis="horizontal"
       showStatus={false}
       showThumbs={false}
-      // autoPlay={true}
+      autoPlay={true}
       infiniteLoop={true}
       stopOnHover
       swipeScrollTolerance={5}
