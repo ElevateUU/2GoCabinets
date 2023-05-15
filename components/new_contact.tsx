@@ -194,6 +194,7 @@ const LeadForm = () => {
             singleValue: (provided) => ({
               ...provided,
               color: "black",
+              padding: 0
             }),
             menu: (provided) => ({
               ...provided,
@@ -218,7 +219,7 @@ const LeadForm = () => {
 
         <div className="w-full relative">
           <label className="font-normal" htmlFor="interests">
-            What Services are you looking for? (check all that apply)
+            What Services are you looking for?
           </label>
           <div
             className="border outline-0 border-black border-t-0 border-l-0 border-r-0 border-b-2 focus:border-sembro transition-all  w-full cursor-pointer"

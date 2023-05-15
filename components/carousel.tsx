@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useWindowSize } from 'react-use';
+import { useWindowSize } from "react-use";
 import { Carousel } from "react-responsive-carousel";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
@@ -10,20 +10,41 @@ import Image from "next/image";
 import Countertop from "@/public/slider/CountertopSlide.png";
 import Truck from "@/public/slider/TruckSlide.png";
 import CabinetMenu from "@/public/slider/CabinetMenuSlide.png";
+import CabinetsMobile from "@/public/slider/mobileSlider/CabinetsMobile.svg";
+import CountertopMobile from "@/public/slider/mobileSlider/CountertopsMobile.svg";
+import TruckMobile from "@/public/slider/mobileSlider/TruckMobile.svg";
 
 const MyCarousel = () => {
-  const { width } = useWindowSize();
+  const { width } =
+    typeof window !== "undefined" ? useWindowSize() : { width: 0 };
   const isMobile = width < 640;
+
+  const desktopImages = [
+    { src: Countertop, alt: "Countertop" },
+    { src: Truck, alt: "Truck" },
+    { src: CabinetMenu, alt: "Cabinet Menu" },
+  ];
+
+  const mobileImages = [
+    { src: CountertopMobile, alt: "Countertop" },
+    { src: TruckMobile, alt: "Truck" },
+    { src: CabinetsMobile, alt: "Cabinet Menu" },
+  ];
+
+  const images = isMobile ? mobileImages : desktopImages;
 
   return (
     <Carousel
       axis="horizontal"
       showStatus={false}
       showThumbs={false}
-      autoPlay={true}
+      // autoPlay={true}
       infiniteLoop={true}
+      stopOnHover
+      swipeScrollTolerance={5}
       className="relative mt-14 md:mt-24"
       renderArrowPrev={(clickHandler, hasPrev) => {
+        if (isMobile) return;
         return (
           <div
             className={`${
@@ -36,6 +57,7 @@ const MyCarousel = () => {
         );
       }}
       renderArrowNext={(clickHandler, hasNext) => {
+        if (isMobile) return;
         return (
           <div
             className={`${
@@ -48,44 +70,41 @@ const MyCarousel = () => {
         );
       }}
     >
-      {[
-        { src: Countertop, alt: 'Countertop' },
-        { src: Truck, alt: 'Truck' },
-        { src: CabinetMenu, alt: 'Cabinet Menu' },
-      ].map(({ src, alt }, index) => (
-        <div key={index} className='w-full relative carousel-height-xl'>
-          {isMobile ? (
-            <div className='absolute inset-0 bg-sembro flex items-center justify-center'>
-              <p className='text-black text-2xl font-semibold'>Coming Soon</p>
-            </div>
-          ) : (
+      {images.map(({ src, alt }, index) => (
+        <div key={index} className="w-full relative carousel-height-xl">
+          <div className="w-full h-full relative">
             <Image
               src={src}
               alt={alt}
-              layout='fill'
-              objectFit='cover'
-              className='rounded-2xl'
+              layout="fill"
+              objectFit="cover" // changed from 'cover' to 'contain'
               priority={index === 0}
             />
-          )}
-        {(index === 0 || index === 2) && (
-          <div
-            className={`absolute ${
-              index === 0 ? "top-[50%]" : "top-[37%]"
-            } left-1/2 transform -translate-x-1/2 -translate-y-1/2`}
-          >
-            <Link href="/commingSoon">
-              <button
-                className="text-black border h-10 border-black p-0 leading-5 hover:bg-sembro hover:border-sembro hover:text-white active:bg-sembro font-bold uppercase text-xs px-4 py-2 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 hidden md:inline-block"
-                type="button"
-              >
-                Choose Now
-              </button>
-            </Link>
           </div>
-        )}
-      </div>
-    ))}
+          {((isMobile && (alt === "Cabinet Menu" || alt === "Countertop")) ||
+            (!isMobile &&
+              (alt === "Countertop" || alt === "Cabinet Menu"))) && (
+            <div
+              className={`absolute ${
+                alt === "Countertop" ? "top-[50%]" : "top-[37%]"
+              } left-1/2 transform -translate-x-1/2 -translate-y-1/2`}
+            >
+              <Link href="/commingSoon">
+                <button
+                  className={`text-black border h-10 border-black p-0 leading-5 hover:bg-sembro hover:border-sembro hover:text-white active:bg-sembro font-bold uppercase text-xs px-4 py-2 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 ${
+                    isMobile
+                      ? "inline-block md:hidden"
+                      : "hidden md:inline-block"
+                  }`}
+                  type="button"
+                >
+                  Choose Now
+                </button>
+              </Link>
+            </div>
+          )}
+        </div>
+      ))}
     </Carousel>
   );
 };

@@ -7,7 +7,7 @@ import Ruler from "@/public/Ruler.png";
 
 export const process = () => {
   return (
-    <div className="pt-48">
+    <div className="pt-20 sm:pt-48">
       <p className="font-normal text-xl sm:text-2xl text-center pb-10">
         Our process is straight forward.
       </p>

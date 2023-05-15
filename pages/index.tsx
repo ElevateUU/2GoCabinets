@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Layout from "@/components/layout/layout";
-import Hero from "@/components/hero";
 import Review from "@/components/reviews";
 import Form from "@/components/new_contact";
 import Process from "@/components/process";
@@ -21,7 +20,6 @@ export default function Home() {
         />
       </Head>
       <Layout>
-        {/* <Hero /> */}
         <section id="home">
         <MyCarousel />
         </section>

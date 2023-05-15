@@ -10,7 +10,7 @@ const footer = () => {
           <span>Get connected with us on social networks:</span>
         </div>
         <div className="flex justify-center pl-[24px]">
-          <a href="#!" className="mr-6 text-neutral-600 dark:text-white">
+          <a href="#!" className="mr-6 text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-4 w-4"
@@ -20,7 +20,7 @@ const footer = () => {
               <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
             </svg>
           </a>
-          <a href="#!" className="mr-6 text-neutral-600 dark:text-white">
+          <a href="#!" className="mr-6 text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -35,7 +35,7 @@ const footer = () => {
               ></path>{" "}
             </svg>
           </a>
-          <a href="#!" className="mr-6 text-neutral-600 dark:text-white">
+          <a href="#!" className="mr-6 text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-4 w-4"
@@ -55,12 +55,12 @@ const footer = () => {
               Products
             </h6>
             <p className="mb-1.5">
-              <Link href="/commingSoon" className="text-neutral-600 dark:text-white">
+              <Link href="/commingSoon" className="text-white">
                 Cabinets
               </Link>
             </p>
             <p className="mb-1.5">
-              <Link href="/commingSoon" className="text-neutral-600 dark:text-white">
+              <Link href="/commingSoon" className="text-white">
                 Countertops
               </Link>
             </p>
@@ -70,22 +70,22 @@ const footer = () => {
               Useful links
             </h6>
             <p className="mb-1.5">
-              <Link href="/commingSoon" className="text-neutral-600 dark:text-white">
+              <Link href="/commingSoon" className="text-white">
                 Services
               </Link>
             </p>
             <p className="mb-1.5">
-              <Link href="/commingSoon" className="text-neutral-600 dark:text-white">
+              <Link href="/commingSoon" className="text-white">
                 Cabinets
               </Link>
             </p>
             <p className="mb-1.5">
-              <Link href="/commingSoon" className="text-neutral-600 dark:text-white">
+              <Link href="/commingSoon" className="text-white">
                 Countertops
               </Link>
             </p>
             <p>
-              <Link href="/commingSoon" className="text-neutral-600 dark:text-white">
+              <Link href="/commingSoon" className="text-white">
                 About
               </Link>
             </p>
