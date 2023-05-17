@@ -47,29 +47,35 @@ const LeadForm = () => {
     });
   };
 
-  const dropdownContent = (
-    <div className="origin-top-right absolute left-1/2 transform -translate-x-1/2 mt-2 w-full rounded-md p-3 shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50 custom-dropdown-content">
-      <div className="py-1">
-        {interestOptions.map((option) => (
-          <div
-            key={option.value}
-            className="px-4 text-sm cursor-pointer flex items-center justify-between"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <label htmlFor={option.value}>{option.label}</label>
+const dropdownContent = (
+  <div className="origin-top-right absolute left-1/2 transform -translate-x-1/2 mt-2 w-full rounded-md p-2 shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50 custom-dropdown-content">
+    <div className="py-1 rounded-md border-2 border-gray-200 p-2 w-full focus:border-blue-500 transition-colors">
+      {interestOptions.map((option) => (
+        <div
+          key={option.value}
+          className="px-4 text-sm cursor-pointer flex items-center justify-between hover:bg-gray-100 transition-colors"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <label className="text-gray-700" htmlFor={option.value}>
+            {option.label}
+          </label>
+          <div className="border border-gray-300 rounded w-5 h-5 flex justify-center items-center">
             <input
               type="checkbox"
               id={option.value}
               name={option.value}
               checked={interests.includes(option.value)}
               onClick={(e) => handleInterestClick(e, option.value)}
-              className="ml-4 scale-150 sm:scale-100 transform-gpu sm:ml-4"
+              className="appearance-none focus:outline-none w-4 h-4 text-blue-500"
             />
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
-  );
+  </div>
+);
+
+  
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -97,23 +103,21 @@ const LeadForm = () => {
   };
 
   return (
-    <div>
+<div className="p-4 pt-24 sm:p-0">
       <form
-        onSubmit={(e: React.FormEvent<HTMLFormElement>) => handleSubmit(e)}
-        className="px-4 rounded mx-auto max-w-3xl w-full mt-16 sm:mt-32 pb-24 inputs space-y-5"
+        onSubmit={handleSubmit}
+        className="rounded max-w-3xl w-full mt-8 sm:mt-16 pb-12 space-y-6 sm:space-y-8 mx-auto"
       >
-        <div>
-          <h1 className="text-4xl pb-8 sm:pb-16 font-medium text-center">
-            GET IN TOUCH
-          </h1>
-        </div>
-        <div className="flex flex-col sm:flex-row sm:space-x-4">
-          <div className="w-full sm:w-1/2">
-            <label className="font-normal" htmlFor="firstName">
+        <h1 className="text-2xl sm:text-4xl font-medium text-center mb-6 sm:mb-8">
+          GET IN TOUCH
+        </h1>
+        <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+          <div className="w-full">
+            <label className="font-normal block mb-1" htmlFor="firstName">
               First Name
             </label>
             <input
-              className="border outline-0 border-black border-t-0 border-l-0 border-r-0 border-b-2 focus:border-sembro transition-all w-full"
+              className="border-2 border-gray-200 rounded-md p-2 w-full focus:border-blue-500 transition-colors"
               type="text"
               name="First name"
               id="firstName"
@@ -121,12 +125,12 @@ const LeadForm = () => {
               ref={firstNameRef}
             />
           </div>
-          <div className="w-full sm:w-1/2 mt-4 sm:mt-0">
-            <label className="font-normal" htmlFor="lastName">
+          <div className="w-full">
+            <label className="font-normal block mb-1" htmlFor="lastName">
               Last Name
             </label>
             <input
-              className="border outline-0 border-black border-t-0 border-l-0 border-r-0 border-b-2 focus:border-sembro transition-all w-full"
+              className="border-2 border-gray-200 rounded-md p-2 w-full focus:border-blue-500 transition-colors"
               type="text"
               name="Last name"
               id="lastName"
@@ -135,13 +139,13 @@ const LeadForm = () => {
             />
           </div>
         </div>
-        <div className="flex flex-col sm:flex-row sm:space-x-4 mt-4 sm:mt-0">
-          <div className="w-full sm:w-1/2">
-            <label className="font-normal" htmlFor="phone">
+        <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+          <div className="w-full">
+            <label className="font-normal block mb-1" htmlFor="phone">
               Phone
             </label>
             <input
-              className="border outline-0 border-black border-t-0 border-l-0 border-r-0 border-b-2 focus:border-sembro transition-all w-full"
+              className="border-2 border-gray-200 rounded-md p-2 w-full focus:border-blue-500 transition-colors"
               type="phone"
               name="Phone"
               id="phone"
@@ -149,12 +153,12 @@ const LeadForm = () => {
               ref={phoneRef}
             />
           </div>
-          <div className="w-full sm:w-1/2 mt-4 sm:mt-0">
-            <label className="font-normal" htmlFor="email">
+          <div className="w-full">
+            <label className="font-normal block mb-1" htmlFor="email">
               Email
             </label>
             <input
-              className="border outline-0 border-black border-t-0 border-l-0 border-r-0 border-b-2 focus:border-sembro transition-all w-full"
+              className="border-2 border-gray-200 rounded-md p-2 w-full focus:border-blue-500 transition-colors"
               type="email"
               name="Email"
               id="email"
@@ -163,12 +167,12 @@ const LeadForm = () => {
             />
           </div>
         </div>
-        <div>
-          <label className="font-normal" htmlFor="message">
+        <div className="w-full">
+          <label className="font-normal block mb-1" htmlFor="message">
             Message
           </label>
           <input
-            className="border outline-0 border-black border-t-0 border-l-0 border-r-0 border-b-2 focus:border-sembro transition-all w-full"
+            className="border-2 border-gray-200 rounded-md p-2 w-full focus:border-blue-500 transition-colors"
             type="text"
             name="Message"
             id="message"
@@ -176,10 +180,11 @@ const LeadForm = () => {
             ref={messageRef}
           />
         </div>
+        <div className="w-full">
         <ReactSelect
           id="react-select"
           options={selectOptions}
-          className="border outline-0 border-black border-t-0 border-l-0 border-r-0 border-b-2 transition-all w-full"
+          className="border-2 border-gray-200 rounded-md p-2 transition-colors w-full focus:border-blue-500"
           placeholder="Where did you hear about us?"
           styles={{
             control: (provided) => ({
@@ -216,32 +221,32 @@ const LeadForm = () => {
           }}
           onChange={(option) => setSelectedOption(option ? option.value : "")}
         />
-
-        <div className="w-full relative">
-          <label className="font-normal" htmlFor="interests">
-            What Services are you looking for?
-          </label>
-          <div
-            className="border outline-0 border-black border-t-0 border-l-0 border-r-0 border-b-2 focus:border-sembro transition-all  w-full cursor-pointer"
-            onClick={toggleDropdown}
-          >
-            <span>
-              {interests.length > 0 ? interests.join(", ") : "Select service"}
-            </span>
-          </div>
-          {dropdownOpen && dropdownContent}
+       </div>
+       <div className="w-full relative">
+       <label className="font-normal block mb-1" htmlFor="interests">
+                What Services are you looking for?
+              </label>
+              <div
+                className="border-2 border-gray-200 rounded-md p-2 cursor-pointer w-full focus:border-blue-500 transition-colors"
+                onClick={toggleDropdown}
+              >
+                <span>
+                  {interests.length > 0 ? interests.join(", ") : "Select service"}
+                </span>
+              </div>
+              {dropdownOpen && dropdownContent}
+            </div>
+            <div className="flex justify-center">
+              <button
+                type="submit"
+                className="py-2 px-4 rounded text-sembro font-medium text-lg"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
         </div>
-        <div className="flex justify-center">
-          <button
-            type="submit"
-            className="pb-10 mr-auto ml-auto  hover:text-sembro duration-300"
-          >
-            <p className="font-medium text-xl">Submit</p>
-          </button>
-        </div>
-      </form>
-    </div>
-  );
-};
+      );
+    };
 
-export default LeadForm;
+    export default LeadForm;

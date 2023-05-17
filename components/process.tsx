@@ -7,11 +7,11 @@ import Ruler from "@/public/Ruler.png";
 
 export const process = () => {
   return (
-    <div className="pt-20 sm:pt-48">
-      <p className="font-normal text-xl sm:text-2xl text-center pb-10">
+    <div className="pt-8 sm:pt-48">
+      <p className="font-normal text-base sm:text-2xl text-center pb-6">
         Our process is straight forward.
       </p>
-      <div className="flex flex-col sm:flex-row items-center justify-center pb-10">
+      <div className="flex flex-col sm:flex-row items-center justify-center pb-8 space-y-5 sm:space-y-0 sm:space-x-8">
         <div className="bg-white my-5 sm:my-0 sm:mr-10 shadow-md hover:shadow-lg hover:transition duration-300 w-64 h-48 box">
           <div className="icon">
             <Image src={Car} alt="" className="w-[4.5rem] h-14 mb-2" />
@@ -19,8 +19,8 @@ export const process = () => {
               Quick Delivery
             </p>
           </div>
-          <div className="content">
-            <p className="m-auto w-[80%] text-center">
+          <div className="content px-4">
+            <p className="text-center">
               Fast means no longer waiting months to get the materials and labor
               that you need. We pride ourselves on how quickly we could deliver
               our product!
@@ -35,8 +35,8 @@ export const process = () => {
               Affordable
             </p>
           </div>
-          <div className="content">
-            <p className="m-auto w-[80%] text-center">
+          <div className="content px-4">
+            <p className="text-center">
               Speed means nothing without the Quality of work. Our reputation is
               backed by decades of experience and assurance your project will be
               done right!
@@ -51,8 +51,8 @@ export const process = () => {
               Expert Craftsmanship
             </p>
           </div>
-          <div className="content">
-            <p className="m-auto w-[80%] text-center">
+          <div className="content px-4">
+            <p className="text-center">
               Affordable is plain and simple! Our process makes our pricing
               super competitive. This means you get the remodel you’ve always
               dreamed about at a lower cost!

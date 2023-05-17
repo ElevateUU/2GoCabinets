@@ -41,7 +41,7 @@ const MyCarousel = () => {
       infiniteLoop={true}
       stopOnHover
       swipeScrollTolerance={5}
-      className="relative mt-14 md:mt-24"
+      className="relative mt-14 md:mt-24 shadow-md"
       renderArrowPrev={(clickHandler, hasPrev) => {
         if (isMobile) return;
         return (
