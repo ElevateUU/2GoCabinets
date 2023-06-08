@@ -16,14 +16,13 @@ export const process = () => {
           <div className="icon">
             <Image src={Car} alt="" className="w-[4.5rem] h-14 mb-2" />
             <p className="font-semibold text-lg text-center whitespace-nowrap overflow-hidden text-overflow-ellipsis">
-              Quick Delivery
+              Instalation
             </p>
           </div>
           <div className="content px-4">
             <p className="text-center">
               Fast means no longer waiting months to get the materials and labor
-              that you need. We pride ourselves on how quickly we could deliver
-              our product!
+              that you need. We strive for a quick turnaround!
             </p>
           </div>
         </div>

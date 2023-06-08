@@ -14,7 +14,9 @@ module.exports = {
         'light-black': '#2c2c2c',
         'our': '#2d6aa0',
         "whitik": '#FAFAFA',
-        'sembro': '#61718F'
+        'sembro': '#61718F',
+        'countertop': '#8C8B8B',
+        'choose': '#3C4453'
       },
       animation: {
         blob: "blob 7s infinite",
@@ -52,6 +54,14 @@ module.exports = {
             transform: "tranlate(0px, 0px) scale(1)",
             filter: "blur(1px)",
           },
+        },
+        slideInLeft: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(0%)' },
+        },
+        slideInRight: {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(0%)' },
         },
       },
     },
