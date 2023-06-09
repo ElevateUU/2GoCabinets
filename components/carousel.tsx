@@ -76,6 +76,35 @@ const MyCarousel = () => {
 
   const desktopImages = [
     {
+      src: TruckBg,
+      alt: "Truck",
+      overlaySrc: [
+        {
+          src: truckCar,
+          width: "55vw",
+          height: "40vh",
+          bottom: "0",
+          left: "25%",
+          top: "",
+          right: "",
+          animation: "animate-slideInFromLeft",
+          transform: "translateX(-50%)",
+        },
+    ], 
+      description: "WE COME TO YOU",
+      under: "",
+      color: "text-sembro",
+      color_under: "text-choose",
+      size: "text-9xl tracking-wide",
+      size_under: "",
+      stroke: "",
+      animation: "slideInFromRight",
+      bottomTextAnimation: "",
+      weight: "font-extrabold",
+      weight_under: "font-semibold ",
+      position: "top-[20%] left-[50%] transform -translate-x-1/2",
+    },
+    {
       src: CountertopBg,
       alt: "Countertop",
       overlaySrc: [
@@ -149,39 +178,12 @@ const MyCarousel = () => {
       color_under: "text-choose",
       size: "text-8xl",
       animation: "slideInFromLeft",
+      stroke: "",
       bottomTextAnimation: "slideInFromRight",
       size_under: "text-3xl",
       weight: "font-extrabold",
       weight_under: "font-semibold",
       position: "top-20 left-1/2 transform -translate-x-1/2",
-    },
-    {
-      src: TruckBg,
-      alt: "Truck",
-      overlaySrc: [
-        {
-          src: truckCar,
-          width: "55vw",
-          height: "40vh",
-          bottom: "0",
-          left: "25%",
-          top: "",
-          right: "",
-          animation: "animate-slideInFromLeft",
-          transform: "translateX(-50%)",
-        },
-    ], 
-      description: "WE COME TO YOU",
-      under: "",
-      color: "text-sembro",
-      color_under: "text-choose",
-      size: "text-9xl tracking-wider",
-      size_under: "",
-      animation: "slideInFromRight",
-      bottomTextAnimation: "",
-      weight: "font-extrabold",
-      weight_under: "font-semibold ",
-      position: "top-[20%] left-[50%] transform -translate-x-1/2",
     },
     {
       src: CabinetsBg,
@@ -241,6 +243,7 @@ const MyCarousel = () => {
       description: "CABINETS",
       under: "Choose from wide selection",
       color: "text-white",
+      stroke: "text-stroke",
       color_under: "text-choose",
       size: "text-8xl",
       animation: "slideInFromRight",
@@ -326,6 +329,7 @@ const MyCarousel = () => {
       color: "text-countertop",
       color_under: "text-choose",
       size: "text-4xl",
+      stroke: "",
       animation: "slideInFromLeft",
       bottomTextAnimation: "slideInFromRight",
       size_under: "text-2xl",
@@ -353,6 +357,7 @@ const MyCarousel = () => {
       under: "",
       color: "text-sembro",
       color_under: "text-choose",
+      stroke: "",
       size: "text-6xl tracking-wider",
       size_under: "",
       animation: "slideInFromRight",
@@ -420,6 +425,7 @@ const MyCarousel = () => {
       under: "Choose from wide selection",
       color: "text-white",
       color_under: "text-choose",
+      stroke: "",
       size: "text-5xl",
       animation: "slideInFromRight",
       bottomTextAnimation: "slideInFromLeft",
@@ -443,7 +449,7 @@ const MyCarousel = () => {
       showStatus={false}
       showThumbs={false}
       onChange={setCurrentSlide}
-      // autoPlay={true}
+      autoPlay={true}
       infiniteLoop={true}
       stopOnHover
       swipeScrollTolerance={5}
@@ -483,6 +489,7 @@ const MyCarousel = () => {
             alt,
             description,
             under,
+            stroke,
             color,
             color_under,
             size,
@@ -565,7 +572,7 @@ const MyCarousel = () => {
                 className={`absolute ${position}  w-full h-full flex flex-col pointer-events-none`}
               >
                 <p
-                  className={`${color} ${size} ${weight} ${
+                  className={`${color} ${size} ${weight} ${stroke} ${
                     currentSlide === index ? `animate-${animation}` : ""
                   } z-20`}
                 >

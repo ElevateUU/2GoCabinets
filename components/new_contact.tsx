@@ -33,15 +33,12 @@ const LeadForm = () => {
     setDropdownOpen(!dropdownOpen);
   };
 
-  const handleInterestClick = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.name;
-    setInterests((prevState) => {
-      if (prevState.includes(value)) {
-        return prevState.filter((interest) => interest !== value);
-      } else {
-        return [...prevState, value];
-      }
-    });
+  const handleInterestClick = (value: string) => {
+    if (interests.includes(value)) {
+      setInterests(interests.filter((interest) => interest !== value));
+    } else {
+      setInterests([...interests, value]);
+    }
   };
 
   const dropdownContent = (
@@ -51,6 +48,7 @@ const LeadForm = () => {
           <div
             key={option.value}
             className="px-4 py-2 text-sm cursor-pointer flex items-center justify-between hover:bg-gray-100 transition-colors"
+            onClick={() => handleInterestClick(option.value)}
           >
             <label className="text-gray-700" htmlFor={option.value}>
               {option.label}
@@ -61,8 +59,8 @@ const LeadForm = () => {
                 id={option.value}
                 name={option.value}
                 checked={interests.includes(option.value)}
-                onChange={handleInterestClick}
                 className="focus:outline-none w-5 h-5 text-sembro"
+                readOnly
               />
             </div>
           </div>
@@ -231,8 +229,8 @@ const LeadForm = () => {
         </div>
         <div className="flex justify-center">
           <button
+            className="text-sembro border border-sembro hover:bg-sembro hover:text-white active:bg-sembro font-bold uppercase text-xs px-4 py-2 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 w-24 h-10"
             type="submit"
-            className="py-2 px-4 rounded text-black font-medium text-xl"
           >
             Submit
           </button>

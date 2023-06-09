@@ -12,20 +12,21 @@ export const process = () => {
         Our process is straight forward.
       </p>
       <div className="flex flex-col sm:flex-row items-center justify-center pb-8 space-y-5 sm:space-y-0 sm:space-x-8">
-        <div className="bg-white my-5 sm:my-0 sm:mr-10 shadow-md hover:shadow-lg hover:transition duration-300 w-64 h-48 box">
-          <div className="icon">
-            <Image src={Car} alt="" className="w-[4.5rem] h-14 mb-2" />
-            <p className="font-semibold text-lg text-center whitespace-nowrap overflow-hidden text-overflow-ellipsis">
-              Instalation
-            </p>
-          </div>
-          <div className="content px-4">
-            <p className="text-center">
-              Fast means no longer waiting months to get the materials and labor
-              that you need. We strive for a quick turnaround!
-            </p>
-          </div>
-        </div>
+      <div className="bg-white my-5 sm:my-0 sm:mr-10 shadow-md hover:shadow-lg hover:transition duration-300 w-64 h-48 box" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+  <div className="icon">
+    <Image src={Car} alt="" className="w-[4.5rem] h-14 mb-2" />
+    <p className="font-semibold text-lg text-center whitespace-nowrap overflow-hidden text-overflow-ellipsis">
+      Installation
+    </p>
+  </div>
+  <div className="content px-4 flex-grow flex flex-col justify-center items-center h-full">
+    <p className="text-center">
+      Fast means no longer waiting months to get the materials and labor
+      that you need. We strive for a quick turnaround!
+    </p>
+  </div>
+</div>
+
 
         <div className="bg-white my-5 sm:my-0 sm:mr-10 shadow-md hover:shadow-lg hover:transition duration-300 w-64 h-48 box">
           <div className="icon">
@@ -34,11 +35,11 @@ export const process = () => {
               Affordable
             </p>
           </div>
-          <div className="content px-4">
-            <p className="text-center">
-              Speed means nothing without the Quality of work. Our reputation is
-              backed by decades of experience and assurance your project will be
-              done right!
+          <div className="content px-4 flex items-center">
+            <p className="text-center flex justify-center">
+              Affordable is plain and simple! Our process makes our pricing
+              super competitive. This means you get the remodel you’ve always
+              dreamed about at a lower cost!
             </p>
           </div>
         </div>
@@ -50,18 +51,19 @@ export const process = () => {
               Expert Craftsmanship
             </p>
           </div>
-          <div className="content px-4">
+          <div className="content px-4 flex items-center">
             <p className="text-center">
-              Affordable is plain and simple! Our process makes our pricing
-              super competitive. This means you get the remodel you’ve always
-              dreamed about at a lower cost!
+              Speed means nothing without the Quality of work. Our reputation is
+              backed by decades of experience and assurance your project will be
+              done right!
             </p>
           </div>
         </div>
       </div>
 
       <p className="w-full px-4 text-sm sm:w-[49rem] sm:text-base text-center mx-auto font-normal">
-        What sets us apart from the rest of the big time competitive brands? <br />
+        What sets us apart from the rest of the big time competitive brands?{" "}
+        <br />
         Don’t wait around for months with supply chain issues and labor
         shortages! Our process allows us to expedite delivery of your product,
         saving weeks if not months of time you could be enjoying your new
@@ -75,4 +77,3 @@ export const process = () => {
   );
 };
 export default process;
-
