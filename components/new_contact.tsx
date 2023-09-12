@@ -41,9 +41,19 @@ const LeadForm = () => {
     }
   };
 
+  const [showContactForm, setShowContactForm] = useState(false);
+
+  const handleGetEstimateClick = () => {
+    setShowContactForm(true);
+  };
+
+  const handleBackClick = () => {
+    setShowContactForm(false);
+  };
+
   const dropdownContent = (
-    <div className="origin-top-right absolute left-1/2 transform -translate-x-1/2 mt-2 w-full rounded-md p-2 shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50 custom-dropdown-content">
-      <div className="py-1 rounded-md p-2 w-full focus:border-blue-500 transition-colors">
+    <div className="origin-top-right absolute left-1/2 transform -translate-x-1/2 mt-2 w-full p-2 shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50 custom-dropdown-content">
+      <div className="py-1 p-2 w-full transition-colors">
         {interestOptions.map((option) => (
           <div
             key={option.value}
@@ -95,147 +105,144 @@ const LeadForm = () => {
   };
 
   return (
-    <div className="p-4 pt-24 sm:p-0">
-      <form
-        onSubmit={handleSubmit}
-        className="rounded max-w-3xl w-full mt-8 sm:mt-16 pb-12 space-y-6 sm:space-y-8 mx-auto"
-      >
-        <h1 className="text-2xl sm:text-4xl font-medium text-center mb-6 sm:mb-8">
-          GET IN TOUCH
-        </h1>
-        <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+    <div className="">
+      <div className="flex justify-between items-center p-10">
+        <div className="flex flex-col gap-4 w-[332px]">
+          <p className="text-4xl">Where would you like to receive updates?</p>
+          <p className=" text-xl text-modaltext">
+            Let us know where we can send your comprehensive estimate after an
+            expert on our team has checked and refined it.
+          </p>
+        </div>
+        <form
+          onSubmit={handleSubmit}
+          className="rounded max-w-3xl w-1/2 mt-8 sm:mt-16 pb-12 space-y-6 sm:space-y-8 justify-center"
+        >
+          <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+            <div className="w-full">
+              <input
+                className="custom-input border border-graydot rounded-lg border-gray-200 p-2 w-full focus:border-color5 transition-colors"
+                type="text"
+                name="First name"
+                id="firstName"
+                placeholder="First Name"
+                required
+                ref={firstNameRef}
+              />
+            </div>
+            <div className="w-full">
+              <input
+                className="border border-graydot rounded-lg border-gray-200 p-2 w-full focus:border-color5 transition-colors"
+                type="text"
+                name="Last name"
+                id="lastName"
+                placeholder="Last Name"
+                required
+                ref={lastNameRef}
+              />
+            </div>
+          </div>
+          <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+            <div className="w-full">
+              <input
+                className="border border-graydot rounded-lg border-gray-200 p-2 w-full focus:border-color5 transition-colors"
+                type="phone"
+                name="Phone"
+                id="phone"
+                placeholder="Phone"
+                required
+                ref={phoneRef}
+              />
+            </div>
+            <div className="w-full">
+              <input
+                className="border border-graydot rounded-lg border-gray-200  p-2 w-full focus:border-color5 transition-colors"
+                type="email"
+                name="Email"
+                id="email"
+                placeholder="Email"
+                required
+                ref={emailRef}
+              />
+            </div>
+          </div>
           <div className="w-full">
-            <label className="font-normal block mb-1" htmlFor="firstName">
-              First Name
-            </label>
             <input
-              className="border-2 border-gray-200 rounded-md p-2 w-full focus:border-blue-500 transition-colors"
+              className="border text-gray border-graydot rounded-lg border-gray-200  p-2 w-full focus:border-color5 transition-colors"
               type="text"
-              name="First name"
-              id="firstName"
-              required
-              ref={firstNameRef}
+              name="Message"
+              id="message"
+              placeholder="Message"
+              ref={messageRef}
             />
           </div>
           <div className="w-full">
-            <label className="font-normal block mb-1" htmlFor="lastName">
-              Last Name
-            </label>
-            <input
-              className="border-2 border-gray-200 rounded-md p-2 w-full focus:border-blue-500 transition-colors"
-              type="text"
-              name="Last name"
-              id="lastName"
-              required
-              ref={lastNameRef}
+            <ReactSelect
+              id="react-select"
+              options={selectOptions}
+              className="border border-graydot rounded-lg p-2 transition-colors w-full focus:border-color5"
+              placeholder="Where did you hear about us?"
+              styles={{
+                control: (provided) => ({
+                  ...provided,
+                  backgroundColor: "white",
+                  boxShadow: "none",
+                  borderColor: "transparent",
+                  cursor: "default",
+                  border: 0,
+                  padding: 0,
+                }),
+                singleValue: (provided) => ({
+                  ...provided,
+                  color: "text-gray",
+                  padding: 0,
+                }),
+                menu: (provided) => ({
+                  ...provided,
+                  backgroundColor: "white",
+                  boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+                }),
+                placeholder: (provided) => ({
+                  ...provided,
+                  color: "text-gray",
+                  marginLeft: 0,
+                  padding: 0,
+                }),
+                option: (provided) => ({
+                  ...provided,
+                  backgroundColor: "white",
+                  color: "text-gray",
+                  cursor: "pointer",
+                }),
+              }}
+              onChange={(option) =>
+                setSelectedOption(option ? option.value : "")
+              }
             />
           </div>
-        </div>
-        <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-          <div className="w-full">
-            <label className="font-normal block mb-1" htmlFor="phone">
-              Phone
-            </label>
-            <input
-              className="border-2 border-gray-200 rounded-md p-2 w-full focus:border-blue-500 transition-colors"
-              type="phone"
-              name="Phone"
-              id="phone"
-              required
-              ref={phoneRef}
-            />
+          <div className="w-full relative">
+            <div
+              className="border border-graydot rounded-lg p-2 cursor-pointer w-full focus:border-color5 transition-colors"
+              onClick={toggleDropdown}
+            >
+              <span>
+                {interests.length > 0
+                  ? interests.join(", ")
+                  : "What Services are you looking for?"}
+              </span>
+            </div>
+            {dropdownOpen && dropdownContent}
           </div>
-          <div className="w-full">
-            <label className="font-normal block mb-1" htmlFor="email">
-              Email
-            </label>
-            <input
-              className="border-2 border-gray-200 rounded-md p-2 w-full focus:border-blue-500 transition-colors"
-              type="email"
-              name="Email"
-              id="email"
-              required
-              ref={emailRef}
-            />
+          <div className="flex justify-center">
+            <button
+                className="bg-color5 w-40 h-14 rounded-lg text-sm text-white"
+                type="submit"
+              >
+                Get Your Estimate
+              </button>
           </div>
-        </div>
-        <div className="w-full">
-          <label className="font-normal block mb-1" htmlFor="message">
-            Message
-          </label>
-          <input
-            className="border-2 border-gray-200 rounded-md p-2 w-full focus:border-blue-500 transition-colors"
-            type="text"
-            name="Message"
-            id="message"
-            ref={messageRef}
-          />
-        </div>
-        <div className="w-full">
-          <ReactSelect
-            id="react-select"
-            options={selectOptions}
-            className="border-2 border-gray-200 rounded-md p-2 transition-colors w-full focus:border-blue-500"
-            placeholder="Where did you hear about us?"
-            styles={{
-              control: (provided) => ({
-                ...provided,
-                backgroundColor: "white",
-                boxShadow: "none",
-                borderColor: "transparent",
-                cursor: "default",
-                border: 0,
-                padding: 0,
-              }),
-              singleValue: (provided) => ({
-                ...provided,
-                color: "black",
-                padding: 0,
-              }),
-              menu: (provided) => ({
-                ...provided,
-                backgroundColor: "white",
-                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-              }),
-              placeholder: (provided) => ({
-                ...provided,
-                color: "black",
-                marginLeft: 0,
-                padding: 0,
-              }),
-              option: (provided) => ({
-                ...provided,
-                backgroundColor: "white",
-                color: "black",
-                cursor: "pointer",
-              }),
-            }}
-            onChange={(option) => setSelectedOption(option ? option.value : "")}
-          />
-        </div>
-        <div className="w-full relative">
-          <label className="font-normal block mb-1" htmlFor="interests">
-            What Services are you looking for?
-          </label>
-          <div
-            className="border-2 border-gray-200 rounded-md p-2 cursor-pointer w-full focus:border-blue-500 transition-colors"
-            onClick={toggleDropdown}
-          >
-            <span>
-              {interests.length > 0 ? interests.join(", ") : "Select service"}
-            </span>
-          </div>
-          {dropdownOpen && dropdownContent}
-        </div>
-        <div className="flex justify-center">
-          <button
-            className="text-sembro border border-sembro hover:bg-sembro hover:text-white active:bg-sembro font-bold uppercase text-xs px-4 py-2 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 w-24 h-10"
-            type="submit"
-          >
-            Submit
-          </button>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   );
 };

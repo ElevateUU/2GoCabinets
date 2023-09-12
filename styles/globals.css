@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap');
+
+
 @layer utilities {
   .scrollbar::-webkit-scrollbar {
     width: 20px;
@@ -50,7 +53,6 @@ body::-webkit-scrollbar-thumb {
   box-sizing: border-box;
   overflow: hidden;
   border-radius: 24px;
-  margin-right: 3%;
 }
 
 .box .icon {
@@ -259,3 +261,42 @@ body::-webkit-scrollbar-thumb {
                    1px 1px 0 #000;
   
 }
+
+.scroll-card-container {
+  position: relative;
+  will-change: transform;
+  transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+
+.nav-links a:focus,
+.nav-links a:active {
+  text-decoration: underline;
+  text-decoration-color: #20355D;
+  text-decoration-thickness: 2.5px;  /* Adjust this to make the underline wider */
+}
+
+
+/* styles.css */
+
+.custom-border {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: solid transparent; /* adjust this as needed */
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='16' ry='16' stroke='%23CDC3B9' stroke-width='3' stroke-dasharray='8%2c8' stroke-dashoffset='3' stroke-linecap='square'/%3e%3c/svg%3e");
+}
+
+.hide-image {
+  display: none;
+}
+
+.custom-input:focus::placeholder {
+  transform: translateY(-4px); /* Adjust the value as needed */
+  opacity: 0.7; /* You can change the opacity if needed */
+}
+
+
+ /* .bordered {
+  border-image-source: ;
+ }  */

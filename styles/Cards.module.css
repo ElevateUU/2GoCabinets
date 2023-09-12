@@ -1,0 +1,6 @@
+.card {
+  position: sticky;
+  top: 1em;
+  padding: 1.5em;
+  background-color: #f7f6f5;
+}

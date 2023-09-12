@@ -95,7 +95,7 @@ const MyCarousel = () => {
       under: "",
       color: "text-sembro",
       color_under: "text-choose",
-      size: "text-9xl tracking-wide",
+      size: "text-8xl tracking-wide",
       size_under: "",
       stroke: "",
       animation: "slideInFromRight",
@@ -453,7 +453,7 @@ const MyCarousel = () => {
       infiniteLoop={true}
       stopOnHover
       swipeScrollTolerance={5}
-      className="relative mt-14 md:mt-24 shadow-md"
+      className="relative mt-14 md:mt-24"
       renderArrowPrev={(clickHandler, hasPrev) => {
         if (isMobile) return;
         return (
@@ -463,7 +463,7 @@ const MyCarousel = () => {
             } top-0 bottom-0 left-0 flex justify-center items-center p-3 cursor-pointer z-20`}
             onClick={clickHandler}
           >
-            <IoIosArrowBack className="w-12 h-20 text-white" />
+            <IoIosArrowBack className="w-12 h-20 z-10 text-white" />
           </div>
         );
       }}
@@ -555,7 +555,7 @@ const MyCarousel = () => {
                 } left-1/2 transform -translate-x-1/2 -translate-y-1/2`}
               >
                 <Link href="/comingSoon">
-                  <button
+                  {/* <button
                     className={`text-black border h-10 border-black p-0 leading-5 hover:bg-sembro hover:border-sembro hover:text-white active:bg-sembro font-bold uppercase text-xs px-4 py-2 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 z-[max] ${
                       isMobile
                         ? "inline-block md:hidden"
@@ -564,7 +564,7 @@ const MyCarousel = () => {
                     type="button"
                   >
                     Choose Now
-                  </button>
+                  </button> */}
                 </Link>
               </div>
             )}
