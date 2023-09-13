@@ -25,8 +25,8 @@ const footer = () => {
         </div>
         <div className="p-3 flex flex-col lg:flex-row justify-between w-full lg:w-[600px] mt-4 lg:mt-0">
           <nav className="flex flex-row flex-wrap gap-4 justify-center lg:flex-col">
-            {NAV_LINKS.map((link) => (
-              <Link className="text-color4" href={link.href}>
+            {NAV_LINKS.map((link, index) => (
+              <Link key={index} className="text-color4" href={link.href}>
                 {link.label}
               </Link>
             ))}
@@ -79,8 +79,8 @@ const footer = () => {
       <div className="px-4 lg:px-9 py-9 border-t border-color5 flex flex-col lg:flex-row items-center justify-between">
         <div className="text-xs mb-4 lg:mb-0">© 2GoCabinets 2023</div>
         <div className="flex gap-3 justify-center">
-          {NAV_POLICY.map((link) => (
-            <Link className="text-xs" href={link.href}>
+          {NAV_POLICY.map((link, index) => (
+            <Link key={index} className="text-xs" href={link.href}>
               {link.label}
             </Link>
           ))}

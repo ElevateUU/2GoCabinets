@@ -1,16 +1,11 @@
 import Head from "next/head";
 import Layout from "@/components/layout/layout";
-import Link from "next/link";
-import Form from "@/components/new_contact";
 import MyCarousel from "@/components/carousel";
-import Cabinet from "@/public/Renovation/UMR_3671.jpg";
 import Image from "next/image";
 
 import CabSelector from "@/components/cabselctor";
-import Card from "@/components/cards";
 import ReviewCard from "@/components/reviewbox";
 import Slider from "@/components/Slider";
-import Modal from "@/components/modal";
 import Process from "@/components/procces";
 
 import styles from "@/styles/Cards.module.css";
@@ -18,20 +13,12 @@ import styles from "@/styles/Cards.module.css";
 import Arrow from "@/public/assets/arrow.svg";
 import Google from "@/public/assets/google.svg";
 import Yelp from "@/public/assets/yelp.svg";
-import ArrowDown from "@/public/assets/arrowdown.svg";
 import Done from "@/public/assets/done.svg";
-import Sign from "@/public/assets/Sign.svg";
 
 import Kitchen1 from "@/public/cards/Slider/Feher_Kitchen.jpg";
 import Kitchen2 from "@/public/cards/Slider/Keire_Bathroom.jpg";
 import Kitchen3 from "@/public/cards/Slider/mod6_carousel_2.jpg";
 import Kitchen4 from "@/public/cards/Slider/Riggen_Bathroom.jpg";
-import Dan from "@/public/cards/contractors/thumbnail-avatar-dan.jpg";
-import Woman from "@/public/cards/contractors/contractor-match-recommended.jpg";
-import Constructor from "@/public/cards/contractors/contractor-thumbnail-dan.jpg";
-import Bathroom from "@/public/cards/main/Bathroom.jpg";
-import Review1 from "@/public/reviews/home-review-melanie.webp";
-import Review2 from "@/public/reviews/home-review-tina.webp";
 import { useState } from "react";
 
 const images = [Kitchen1, Kitchen2, Kitchen3, Kitchen4];
@@ -143,19 +130,19 @@ export default function Home() {
         <section className="px-9 pt-10">
           <div className="flex justify-between">
             <ReviewCard
-              imageSrc={Review2}
+              imageSrc={Kitchen1}
               name="Tina L."
               stars={5}
               description="“Everything was seamless when I worked with Block. I was actually kind of shocked! I really appreciated being able to save time and not make multiple trips to the hardware store.”"
             />
             <ReviewCard
-              imageSrc={Review2}
+              imageSrc={Kitchen2}
               name="John D."
               stars={5}
               description="“Compared to what we’ve done before, the build was so much more seamless and communicative. Our contractor was amazing to work with, was extremely responsive and thoughtful throughout the whole process.”"
             />
             <ReviewCard
-              imageSrc={Review1}
+              imageSrc={Kitchen3}
               name="Anna S."
               stars={5}
               description="“The quality of the work is so incredible, the look is so incredible. I love it. I’m a first time homeowner and renovator, so a big part of the allure of 2Go was having someone experienced help me.”"
@@ -661,14 +648,17 @@ export default function Home() {
                 "Great Communication",
                 "Contractors Licensed & Insuranced",
                 "Workmanship Warranty",
-                "Pride In Our Work"
-              ].map((item) => (
-                <div className="border-b border-borderlight py-4 md:py-7 flex flex-row justify-between">
+                "Pride In Our Work",
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="border-b border-borderlight py-4 md:py-7 flex flex-row justify-between"
+                >
                   <p className="text-xl md:text-2xl">{item}</p>
                   <Image
                     className="w-7 md:w-9 h-7 md:h-9 mr-4 md:mr-6"
                     src={Done}
-                    alt={""}
+                    alt=""
                   />
                 </div>
               ))}

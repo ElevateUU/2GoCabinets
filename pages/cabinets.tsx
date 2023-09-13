@@ -33,17 +33,17 @@ export default function How() {
   const cards = [
     {
       title: "Pick From Our Wide Selection",
-      description: "",
+      description: "We work with Top Manufacturers to bring you the best quality product at an affordable cost. Browse our wide selection online. Start with either choosing a cabinet that compliments your home and finish with selecting a beautiful countertop to match! Once we have have the dimensions of your space, you’ll be able to see exactly how your selections look in your Kitchen!",
       image: "/process/Cabinets.png",
     },
     {
       title: "Design Your Dream Kitchen",
-      description: "",
+      description: "Work with one of our expert designers to bring your vision to life. Our simple, yet elegant design will convert your outdated kitchen into a timeless staple in your home!",
       image: "/process/Kitchen.png",
     },
     {
       title: "Finish With Your Installation",
-      description: "",
+      description: "Once plans are finalized, our project manager will stay on top of work-flow to make sure we’re in and out within 10 days. Communication will be our main goal so that our expert craftsman delivery a quality service, FAST. ",
       image: "/process/Man.png",
     },
   ];
@@ -72,47 +72,36 @@ export default function How() {
 
   return (
     <Layout>
-            <SplashScreen/>
+      <SplashScreen />
       <main className="bg-how">
         <section className="relative">
           <Image src={BerezaPromo2} alt={""} />
 
-          <div className="absolute bottom-28">
-            <div className="mt-24 grid grid-cols-1 md:grid-cols-2 items-center justify-items-center gap-8 px-9">
-              <div className="flex flex-col justify-center items-center md:items-start text-center md:text-left">
-                <h2 className="font-normal text-color4 text-8xl mb-4">
-                  CABINETS RENOVATIONS MADE EASY
-                </h2>
-              </div>
-              <div className="">
-                <Image src={Man} alt="Renovation" width={700} height={450} />
-              </div>
-            </div>
+          <div className="absolute bottom-[22rem] left-48 flex flex-col gap-3 items-center">
+            <button className="bg-color4 rounded-lg text-white w-[200px] h-[60px]">
+              Get Estimate
+            </button>
+            <p className="w-[485px] text-center">
+              Explore our IN STOCK cabinet line! Bereza Cabinets, where Modern
+              Design Meets Unmatched Functionality. Elevate your space with
+              sleek lines and premium finishes, creating a harmonious blend of
+              style and practicality. Redefine your Kitchen today with Bereza
+              Cabinets!
+            </p>
           </div>
         </section>
-
-        <div className="flex flex-start border-t border-b border-sembro">
-              <h4 className="mb-4 text-color4 text-center text-xl py-16">
-                <p className="font-bold text-3xl">
-                Explore our IN STOCK cabinet line!
-                </p>
-                    Bereza Cabinets, where
-                  Modern Design Meets Unmatched Functionality. Elevate your
-                  space with sleek lines and premium finishes, creating a
-                  harmonious blend of style and practicality. Redefine your
-                  Kitchen today with Bereza Cabinets!
-              </h4>
-            </div>
 
         <section className="px-9 py-10">
           <div className="flex flex-wrap md:flex-nowrap md:justify-between overflow-x-auto">
             <div className="bg-white w-[325px] h-[380px] rounded-2xl p-4 flex flex-col gap-3 hover:border border-graydot">
-              <Image
-                className="rounded-lg flex justify-center"
-                height={240}
-                src={Orion}
-                alt={""}
-              />
+              <div className="flex justify-center">
+                <Image
+                  className="rounded-lg flex justify-center"
+                  height={240}
+                  src={customCabinets}
+                  alt={""}
+                />
+              </div>
               <p className="text-3xl">Custom Cabinets</p>
               <div className="flex gap-2.5">
                 <p className="py-1 px-2 text-sm bg-footercolor rounded">
@@ -122,12 +111,14 @@ export default function How() {
               </div>
             </div>
             <div className="bg-white w-[325px] h-[380px] rounded-2xl p-4 flex flex-col gap-3 hover:border border-graydot">
-              <Image
-                className="rounded-lg flex justify-center"
-                height={240}
-                src={foreverCabinets}
-                alt={""}
-              />
+              <div className="flex justify-center">
+                <Image
+                  className="rounded-lg flex justify-center"
+                  height={240}
+                  src={foreverCabinets}
+                  alt={""}
+                />
+              </div>
               <p className="text-3xl">Forever Cabinets</p>
               <div className="flex gap-2.5">
                 <p className="py-1 px-2 text-sm bg-footercolor rounded">
@@ -136,13 +127,16 @@ export default function How() {
                 <p className="py-1 px-2 text-sm bg-footercolor rounded">Cool</p>
               </div>
             </div>
+
             <div className="bg-white w-[325px] h-[380px] rounded-2xl p-4 flex flex-col gap-3 hover:border border-graydot">
-              <Image
-                className="rounded-lg flex justify-center"
-                height={240}
-                src={jnkCabinets}
-                alt={""}
-              />
+              <div className="flex justify-center">
+                <Image
+                  className="rounded-lg flex justify-center"
+                  height={240}
+                  src={jnkCabinets}
+                  alt={""}
+                />
+              </div>
               <p className="text-3xl">J&K Cabinets</p>
               <div className="flex gap-2.5">
                 <p className="py-1 px-2 text-sm bg-footercolor rounded">
@@ -151,6 +145,7 @@ export default function How() {
                 <p className="py-1 px-2 text-sm bg-footercolor rounded">Cool</p>
               </div>
             </div>
+
             <div className="bg-white w-[325px] h-[380px] rounded-2xl p-4 flex flex-col gap-3 hover:border border-graydot">
               <div className="flex justify-center">
                 <Image
