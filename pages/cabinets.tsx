@@ -1,18 +1,14 @@
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+import React from "react";
 
-import Slider from "@/components/Slider";
+import { IMAGES, STATES, DESCRIPTIONS, CARDS } from "@/constants";
+
+import Slider from "@/components/slider";
 import ReviewCard from "@/components/reviewbox";
 import Swiper from "@/components/swiper";
-import SplashScreen from "@/components/SplashScreen";
-
-import styles from "@/styles/Cards.module.css";
-
+import SplashScreen from "@/components/splashScreen";
 import Layout from "@/components/layout/layout";
 
-import Man from "@/public//Bla.png";
-import Cabinet from "@/public/Renovation/UMR_3671.jpg";
-import Orion from "@/public/process/7b24e730-54a0-11ed-a82e-7d6aabfbf1b5.jpg";
 import customCabinets from "@/public/cabinets/Custom Slide.jpg";
 import foreverCabinets from "@/public/cabinets/Forevermark Slide.jpg";
 import jnkCabinets from "@/public/cabinets/J_K Slide.jpg";
@@ -23,32 +19,9 @@ import Kitchen2 from "@/public/cards/Slider/Keire_Bathroom.jpg";
 import Kitchen3 from "@/public/cards/Slider/mod6_carousel_2.jpg";
 import Kitchen4 from "@/public/cards/Slider/Riggen_Bathroom.jpg";
 
-import card1 from "@/public/cards/card1.webp";
-import card2 from "@/public/cards/card2.webp";
-import card3 from "@/public/cards/card3.webp";
-
 import BerezaPromo2 from "@/public/Splash/BerezaPromo2.png";
 
 export default function How() {
-  const cards = [
-    {
-      title: "Pick From Our Wide Selection",
-      description: "We work with Top Manufacturers to bring you the best quality product at an affordable cost. Browse our wide selection online. Start with either choosing a cabinet that compliments your home and finish with selecting a beautiful countertop to match! Once we have have the dimensions of your space, you’ll be able to see exactly how your selections look in your Kitchen!",
-      image: "/process/Cabinets.png",
-    },
-    {
-      title: "Design Your Dream Kitchen",
-      description: "Work with one of our expert designers to bring your vision to life. Our simple, yet elegant design will convert your outdated kitchen into a timeless staple in your home!",
-      image: "/process/Kitchen.png",
-    },
-    {
-      title: "Finish With Your Installation",
-      description: "Once plans are finalized, our project manager will stay on top of work-flow to make sure we’re in and out within 10 days. Communication will be our main goal so that our expert craftsman delivery a quality service, FAST. ",
-      image: "/process/Man.png",
-    },
-  ];
-
-  const images = [Kitchen1, Kitchen2, Kitchen3, Kitchen4];
 
   const swiper = [
     Kitchen1,
@@ -61,14 +34,7 @@ export default function How() {
     Kitchen4,
   ];
 
-  const state = ["Columbus", "Grove City", "Hilliard", "Plain City"];
 
-  const descriptions = [
-    "“When we were getting the kitchen done, I built a really good relationship with the contractors. It was wonderful! They were so lovely, and I felt like I could trust them.”",
-    "“For young homeowners who have no idea what theyre doing, the support, the technology and the options were fantastic to have.”",
-    "“It was nice to have the vetting process from 2Go to find a contractor thats the right fit. The contractor was really great.”",
-    "“Our entire experience with 2Go was such a breeze. The portal for project planning was so easy to use and let me reference anything I needed to know about my project.”",
-  ];
 
   return (
     <Layout>
@@ -177,9 +143,9 @@ export default function How() {
           </div>
           <div className="pb-10">
             <Slider
-              images={images}
-              state={state}
-              descriptions={descriptions}
+              images={IMAGES}
+              state={STATES}
+              descriptions={DESCRIPTIONS}
               showLink={false}
             />
           </div>
@@ -248,48 +214,6 @@ export default function How() {
               stars={5}
               description="“The quality of the work is so incredible, the look is so incredible. I love it. I’m a first time homeowner and renovator, so a big part of the allure of 2Go was having someone experienced help me.”"
             />
-          </div>
-        </section>
-
-        <section className="p-10 px-9 ">
-          <div>
-            <div className="flex flex-start border-t-[1px] border-sembro">
-              <h4 className="mb-4 text-color4 text-left text-4xl py-16 max-w-[777px]">
-                Get everything you need to realize your dream renovation with
-                less stress and more confidence.
-              </h4>
-            </div>
-            <div style={{ paddingBottom: `${Math.max(cards.length, 1)}em` }}>
-              {cards.map((card, index) => (
-                <div
-                  key={index}
-                  className={`${styles.card} grid grid-cols-1 md:grid-cols-2 items-center justify-items-center gap-8 px-9 border-t-[1px] border-sembro py-16`}
-                  style={{ transform: `translateY(${index}em)` }}
-                >
-                  <div className="flex flex-col gap-7 items-start">
-                    <div className="flex flex-col sm:flex sm:flex-row gap-7 items-center ">
-                      <div className="bg-color4 w-16 h-16 rounded-full text-center flex items-center justify-center">
-                        <h4 className="text-center text-3xl font-light text-white ">
-                          {index + 1}
-                        </h4>
-                      </div>
-                      <p className="text-3xl">{card.title}</p>
-                    </div>
-                    <p className="text-xl font-normal text-gray max-w-[550px]">
-                      {card.description}
-                    </p>
-                  </div>
-
-                  <div>
-                    <img
-                      className="rounded"
-                      alt={card.title}
-                      src={card.image}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </section>
 

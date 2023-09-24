@@ -7,8 +7,6 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import Link from "next/link";
 import Image from "next/image";
 
-// import { desktopImages, mobileImages } from "@/constants";
-
 import block1 from "@/public/slider/sliderBackground/countertops/block1.png";
 import block2 from "@/public/slider/sliderBackground/countertops/block2.png";
 import block3 from "@/public/slider/sliderBackground/countertops/block3.png";
@@ -21,7 +19,6 @@ import door2 from "@/public/slider/sliderBackground/doors/door2.png";
 import door3 from "@/public/slider/sliderBackground/doors/door3.png";
 import door4 from "@/public/slider/sliderBackground/doors/door4.png";
 import door5 from "@/public/slider/sliderBackground/doors/door5.png";
-import door6 from "@/public/slider/sliderBackground/doors/door6.png";
 
 import truckCar from "@/public/slider/sliderBackground/truck/truck.png";
 
@@ -33,7 +30,6 @@ const MyCarousel = () => {
   const [windowWidth, setWindowWidth] = useState<number | null>(null);
 
   useEffect(() => {
-    // Only run this code once the component is mounted on the client-side
     setWindowWidth(window.innerWidth);
 
     const handleResize = () => {
@@ -42,30 +38,28 @@ const MyCarousel = () => {
 
     window.addEventListener('resize', handleResize);
 
-    // cleanup function
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, []); // Empty dependency array means this effect will only run once when the component is mounted
+  }, []);
 
-  // Now you can use windowWidth in your code
   let topValueBlock1, topValueBlock2, topValueBlock3, topValueBlock4, topValueBlock5, topValueBlock6;
 
-  if (windowWidth && windowWidth <= 480) { // for small devices
+  if (windowWidth && windowWidth <= 480) {
     topValueBlock1 = "29%";
     topValueBlock2 = "29%";
     topValueBlock3 = "80%";
     topValueBlock4 = "54%";
     topValueBlock5 = "80%";
     topValueBlock6 = "54%";
-  } else if (windowWidth && windowWidth <= 768) { // for medium devices
+  } else if (windowWidth && windowWidth <= 768) {
     topValueBlock1 = "33%";
     topValueBlock2 = "33%";
     topValueBlock3 = "78%";
     topValueBlock4 = "57%";
     topValueBlock5 = "78%";
     topValueBlock6 = "57%";
-  } else { // for large devices
+  } else {
     topValueBlock1 = "31%";
     topValueBlock2 = "31%";
     topValueBlock3 = "77%";

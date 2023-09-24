@@ -3,7 +3,7 @@ import ReactModal from "react-modal";
 
 import Image from "next/image";
 
-import Contact from "@/components/new_contact";
+import Contact from "@/components/newContact";
 
 import ArrowDown from "@/public/assets/arrowdown.svg"
 import Close from "@/public/assets/close.svg";
