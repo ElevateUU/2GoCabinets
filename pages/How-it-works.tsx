@@ -5,7 +5,7 @@ import { IMAGES, STATES, DESCRIPTIONS, CARDS_HOW } from "@/constants";
 
 import styles from "@/styles/Cards.module.css";
 
-import Slider from "@/components/slider";
+import Slider from "@/components/slider"
 import Layout from "@/components/layout/layout";
 import CabSelector from "@/components/cabselctor";
 
