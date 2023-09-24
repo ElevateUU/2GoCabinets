@@ -13,12 +13,6 @@ import Couple from "@/public/process/homeowner.webp";
 
 import Homeowner from "@/public/homeowner.webp";
 
-import Kitchen1 from "@/public/cards/Slider/Feher_Kitchen.jpg";
-import Kitchen2 from "@/public/cards/Slider/Keire_Bathroom.jpg";
-import Kitchen3 from "@/public/cards/Slider/mod6_carousel_2.jpg";
-import Kitchen4 from "@/public/cards/Slider/Riggen_Bathroom.jpg";
-
-
 import card1 from "@/public/cards/card1.webp";
 import card2 from "@/public/cards/card2.webp";
 import card3 from "@/public/cards/card3.webp";
