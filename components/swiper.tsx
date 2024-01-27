@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
+
+import { ImageSliderProps } from "@/interfaces/imageSliderProps"
 
 import Arrow from "@/public/assets/arrow.svg";
 
-interface ImageSliderProps {
-  images: (string | StaticImageData)[];
-}
 
 const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
   const [activeIndex, setActiveIndex] = useState(0);

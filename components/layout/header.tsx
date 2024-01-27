@@ -27,10 +27,10 @@ const Header = () => {
   return (
     <div className="fixed flex-wrap bg-white left-0 top-0 w-full z-10 ease-in duration-300 drop-shadow-md">
       <div className="max-w-[1380px] m-auto flex items-center p-4 text-white">
-        <ul className="nav-links hidden items-center gap-[16rem] sm:flex">
+        <ul className="nav-links hidden items-center gap-[19rem] sm:flex">
           <div className="flex gap-5">
             <Link href="/">
-              <Image src={Logo} width={200} alt={""} className="pr-8" />
+              <Image src={Logo} width={250} alt={""} className="pr-8" />
             </Link>
             <li className="p-4 text-black font-light hover:bg-lightgray hover:rounded-lg">
               <Link href="/How-it-works">How It Works</Link>
@@ -62,7 +62,7 @@ const Header = () => {
             <li className="p-4 font-light text-black hover:bg-lightgray hover:rounded-lg">
               <Link href="/commingSoon">Gallery</Link>
             </li>
-            <div className="relative group hover:overflow-visible">
+            {/* <div className="relative group hover:overflow-visible">
               <div className="p-4 font-light text-black cursor-pointer flex flex-row items-center gap-1 hover:bg-lightgray hover:rounded-lg">
                 <Link className="" href={""}>Design</Link>
                 <Image className="transform rotate-90 w-3 h-3" src={ArrowDown} alt={""}></Image>
@@ -81,13 +81,10 @@ const Header = () => {
                   3D Kitchen Design Tool
                 </Link>
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div className="flex">
-            <li className="p-4  text-black transition-all hover:text-sembro">
-              <Link href="/#service">Sign In</Link>
-            </li>
             <div className="pl-4">
               <button
                 onClick={openModal}

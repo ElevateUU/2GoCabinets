@@ -1,11 +1,6 @@
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 
-interface CardProps {
-  backgroundImage: StaticImageData;
-  circleImage: StaticImageData;
-  name: string;
-  experience: string;
-}
+import { CardProps } from "@/interfaces/cardProps"
 
 const Card: React.FC<CardProps> = ({
   backgroundImage,

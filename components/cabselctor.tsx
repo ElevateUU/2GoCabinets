@@ -1,18 +1,11 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
+import Cabinet from "@/public/Renovation/753A8826.jpg"
+import Countertop from "@/public/Renovation/753A8837.jpg"
 
-import Cabinet from "@/public/Renovation/UMR_3671.jpg";
-import Countertop from "@/public/Renovation/UMR_7098.jpg";
+import { selectorProps } from "@/interfaces/cardProps";
 
-interface CardProps {
-  title: string;
-  buildTime: string;
-  description: string;
-  src: StaticImageData;
-  alt: string;
-}
-
-const Card: React.FC<CardProps> = ({
+const Card: React.FC<selectorProps> = ({
   title,
   buildTime,
   description,
@@ -20,8 +13,6 @@ const Card: React.FC<CardProps> = ({
   alt,
 }) => (
   <div className="rounded-lg w-full md:w-[24rem]">
-    {" "}
-    {/* Adjusted width here */}
     <h2 className="text-gray text-center text-xl md:text-2xl pb-8">{title}</h2>
     <div className="bg-lightgray rounded-lg border-2 border-transparent hover:border-color5">
       <div className="h-80 w-full">
@@ -51,8 +42,6 @@ const BuildingSection: React.FC = () => (
         No matter the scope, you can start building today.
       </h2>
       <div className="flex flex-col px-3 md:flex-row justify-center gap-6 md:gap-[8%]">
-        {" "}
-        {/* Adjusted layout and gap here */}
         <Card
           title="Countertops"
           buildTime="10"

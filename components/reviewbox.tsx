@@ -1,14 +1,9 @@
 import Image, { StaticImageData } from 'next/image'
 import React from 'react'
 
-import Star from "@/public/assets/star.svg"
+import { ReviewCardProps } from "@/interfaces/reviewCardProps"
 
-interface ReviewCardProps {
-    imageSrc: StaticImageData;
-    name: string;
-    stars: number;
-    description: string;
-}
+import Star from "@/public/assets/star.svg"
 
 const ReviewCard: React.FC<ReviewCardProps> = ({ imageSrc, name, stars, description }) => {
     return (

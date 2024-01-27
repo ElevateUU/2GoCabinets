@@ -52,10 +52,16 @@ const footer = () => {
             <div className="flex flex-col items-center lg:items-start">
               <p className="text-xs text-gray">Email</p>
               <Link href={""}>
-                <p className="text-color4">lead@2gocabinets.com</p>
+                <p className="text-color4">info@2gocabinets.com</p>
               </Link>
             </div>
-            <form action="" className="mt-4 lg:mt-0">
+            <div className="flex flex-col items-center lg:items-start">
+              <p className="text-xs text-gray">Phone</p>
+              <Link href={""}>
+                <p className="text-color4">(380) 222-2085</p>
+              </Link>
+            </div>
+            {/* <form action="" className="mt-4 lg:mt-0">
               <label htmlFor="">
                 <span className="text-xs text-gray">
                   Sign up to our newsletter
@@ -72,7 +78,7 @@ const footer = () => {
                   Sign Up
                 </button>
               </div>
-            </form>
+            </form> */}
           </div>
         </div>
       </div>
