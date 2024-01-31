@@ -18,6 +18,7 @@ import card2 from "@/public/cards/card2.webp";
 import card3 from "@/public/cards/card3.webp";
 
 import Crew from "@/public/crew/crew.jpg"
+import Link from "next/link";
 
 export default function How() {
 
@@ -165,9 +166,9 @@ export default function How() {
               1000+ rooms renovated on the 2Go platform
             </h4>
             <div className="flex items-center gap-2">
-              <a href="/gallery" className="underline text-color5">
+              <Link href="/gallery" className="underline text-color5">
                 Explore Project Gallery
-              </a>
+              </Link>
               <button className="rounded-full border-color5 border w-8 h-8 flex items-center justify-center">
                 <svg
                   width="16"

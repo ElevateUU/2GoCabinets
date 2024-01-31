@@ -25,6 +25,7 @@ import Review1 from "@/public/reviews/Review1.png"
 import Review2 from "@/public/reviews/Review2.png"
 import Review3 from "@/public/reviews/Review3.png"
 import Review4 from "@/public/reviews/Review4.png"
+import Link from "next/link";
 
 export default function Home() {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -62,9 +63,9 @@ export default function Home() {
               <p className="text-xl">See what customers have to say!</p>
             </h4>
             <div className="flex items-center gap-2 justify-center md:justify-start">
-              <a href="/gallery" className="underline text-color5">
+              <Link href="/gallery" className="underline text-color5">
                 Explore Project Gallery
-              </a>
+              </Link>
               <button className="rounded-full border-color5 border w-8 h-8 flex items-center justify-center">
                 <Image src={Arrow} alt={""} />
               </button>
@@ -87,13 +88,13 @@ export default function Home() {
               Trusted by homeowners of Central Ohio
             </h2>
             <nav className="flex items-center gap-2">
-              <a
+              <Link
                 href="#"
                 className="underline text-color5"
                 aria-label="Read Homeowner Reviews"
               >
                 Read Homeowner Reviews
-              </a>
+              </Link>
               <button
                 className="rounded-full border-color5 border w-8 h-8 flex items-center justify-center"
                 aria-label="Navigate to reviews"
