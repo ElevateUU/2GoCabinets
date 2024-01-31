@@ -75,7 +75,7 @@ const Carousel = ({
         </div>
         <p className="text-2xl md:text-3xl py-4">{descriptions[activeIndex]}</p>
         {showLink && (
-          <Link className="text-color5 underline decoration-solid" href={""}>
+          <Link className="text-color5 underline decoration-solid" href="/gallery">
               View Project
           </Link>
         )}

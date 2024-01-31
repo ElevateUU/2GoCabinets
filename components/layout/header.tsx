@@ -28,7 +28,7 @@ const Header = () => {
     <div className="fixed flex-wrap bg-white left-0 top-0 w-full z-10 ease-in duration-300 drop-shadow-md">
       <div className="max-w-[1380px] m-auto flex items-center p-4 text-white">
         <ul className="nav-links hidden items-center gap-[19rem] sm:flex">
-          <div className="flex gap-5">
+          <div className="flex items-center gap-5">
             <Link href="/">
               <Image src={Logo} width={250} alt={""} className="pr-8" />
             </Link>
@@ -60,7 +60,7 @@ const Header = () => {
               <Link href="/commingSoon">Reviews</Link>
             </li>
             <li className="p-4 font-light text-black hover:bg-lightgray hover:rounded-lg">
-              <Link href="/commingSoon">Gallery</Link>
+              <Link href="/gallery">Gallery</Link>
             </li>
             {/* <div className="relative group hover:overflow-visible">
               <div className="p-4 font-light text-black cursor-pointer flex flex-row items-center gap-1 hover:bg-lightgray hover:rounded-lg">

@@ -12,7 +12,12 @@ const LeadForm = () => {
   const [selectedOption, setSelectedOption] = useState("");
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [interests, setInterests] = useState<string[]>([]);
+  const [showThankYouModal, setShowThankYouModal] = useState(false);
 
+  interface ThankYouModalProps {
+    onClose: () => void;
+  }
+  
   const interestOptions = [
     { label: "Kitchen Remodel", value: "Kitchen Remodel" },
     { label: "Bathroom Remodel", value: "Bathroom Remodel" },
@@ -100,10 +105,32 @@ const LeadForm = () => {
       },
       body: JSON.stringify(data),
     }).then((res) => {
-      if (res.status === 200) console.log("tatysho");
+      if (res.status === 200) {
+        setShowThankYouModal(true)
+      }
     });
   };
 
+  const ThankYouModal: React.FC<ThankYouModalProps> = ({ onClose }) => (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center px-4">
+      <div className="bg-white p-6 md:p-8 rounded-lg text-center shadow-xl max-w-sm w-full">
+        <div className="mb-4">
+          <svg className="mx-auto text-color4 w-16 h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <h2 className="text-2xl font-bold mb-2">Thank You!</h2>
+        <p className="mb-4">Your details have been successfully submitted. Thanks!</p>
+        <button
+          className="mt-4 px-6 py-2 bg-color4 text-white rounded-full"
+          onClick={onClose}
+        >
+          OK
+        </button>
+      </div>
+    </div>
+  );
+  
   return (
     <div className="">
       <div className="flex justify-between items-center p-10">
@@ -243,6 +270,10 @@ const LeadForm = () => {
           </div>
         </form>
       </div>
+
+      {showThankYouModal && (
+        <ThankYouModal onClose={() => setShowThankYouModal(false)} />
+      )}
     </div>
   );
 };

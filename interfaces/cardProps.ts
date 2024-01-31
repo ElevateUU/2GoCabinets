@@ -6,6 +6,7 @@ export interface selectorProps {
   description: string;
   src: StaticImageData;
   alt: string;
+  learnMoreUrl: string;
 }
 
 export interface CardProps {

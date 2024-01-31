@@ -13,16 +13,17 @@ const footer = () => {
   return (
     <footer className="bg-footercolor border-t border-color5 px-4 lg:px-9">
       <div className="flex flex-col lg:flex-row justify-between pb-6 lg:pb-14">
-        <div className="flex flex-col justify-between p-3 lg:p-0">
+        <div className="flex flex-col items-center p-3 lg:p-0">
           <Link href="/">
-            <Image src={Logo} width={300} alt="" className="pr-8 mx-auto lg:mx-0" />
+              <Image src={Logo} width={300} alt="" className="pr-8 pt-8" />
           </Link>
-          <p className="max-w-[550px] font-light text-xl mt-4 text-center lg:mt-0">
+          <p className="max-w-[550px] pt-8 font-light text-xl mt-4 text-center lg:mt-0">
             Simplify the chaos and cost of construction by accessing vetted
             contractors, digital tools, and range of optional support
             packages—all in one place.
           </p>
         </div>
+
         <div className="p-3 flex flex-col lg:flex-row justify-between w-full lg:w-[600px] mt-4 lg:mt-0">
           <nav className="flex flex-row flex-wrap gap-4 justify-center lg:flex-col">
             {NAV_LINKS.map((link, index) => (
@@ -32,7 +33,7 @@ const footer = () => {
             ))}
           </nav>
           <div className="flex flex-col gap-4 mt-4 lg:mt-0">
-            <div className="flex gap-3 justify-center">
+            <div className="flex gap-3">
               {SOCIAL_MEDIA_ICONS.map((icon) => (
                 <Link
                   className="flex items-center justify-center px-2 bg-icons rounded-full w-8 h-8"

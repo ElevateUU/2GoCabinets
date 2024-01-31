@@ -20,9 +20,9 @@ import Kitchen3 from "@/public/cards/Slider/mod6_carousel_2.jpg";
 import Kitchen4 from "@/public/cards/Slider/Riggen_Bathroom.jpg";
 
 import BerezaPromo2 from "@/public/Splash/BerezaPromo2.png";
+import Link from "next/link";
 
 export default function How() {
-
   const swiper = [
     Kitchen1,
     Kitchen2,
@@ -33,8 +33,6 @@ export default function How() {
     Kitchen3,
     Kitchen4,
   ];
-
-
 
   return (
     <Layout>
@@ -58,24 +56,7 @@ export default function How() {
         </section>
 
         <section className="px-9 py-10">
-          <div className="flex flex-wrap md:flex-nowrap md:justify-between overflow-x-auto">
-            <div className="bg-white w-[325px] h-[380px] rounded-2xl p-4 flex flex-col gap-3 hover:border border-graydot">
-              <div className="flex justify-center">
-                <Image
-                  className="rounded-lg flex justify-center"
-                  height={240}
-                  src={customCabinets}
-                  alt={""}
-                />
-              </div>
-              <p className="text-3xl">Custom Cabinets</p>
-              <div className="flex gap-2.5">
-                <p className="py-1 px-2 text-sm bg-footercolor rounded">
-                  Contemporary
-                </p>
-                <p className="py-1 px-2 text-sm bg-footercolor rounded">Cool</p>
-              </div>
-            </div>
+          <div className="flex flex-wrap md:flex-nowrap md:justify-around overflow-x-auto">
             <div className="bg-white w-[325px] h-[380px] rounded-2xl p-4 flex flex-col gap-3 hover:border border-graydot">
               <div className="flex justify-center">
                 <Image
@@ -136,9 +117,11 @@ export default function How() {
           <div className="flex justify-between flex-grow pb-10 pt-16">
             <h4 className="text-4xl">Building Better around Central Ohio</h4>
             <div className="flex items-center gap-2">
-              <button className="bg-borderlight px-6 py-3 rounded-lg h-16">
-                Explore Project Gallery
-              </button>
+              <Link href="/gallery">
+                <button className="bg-color4 text-white px-6 py-3 rounded-lg h-16">
+                  Explore Project Gallery
+                </button>
+              </Link>
             </div>
           </div>
           <div className="pb-10">
@@ -158,11 +141,7 @@ export default function How() {
                 Trusted by homeowners around Ohio
               </h2>
             </div>
-            <div className="flex items-center gap-2">
-              <button className="bg-borderlight px-6 py-3 rounded-lg h-16">
-                Explore Project Gallery
-              </button>
-            </div>
+            <div className="flex items-center gap-2"></div>
           </div>
           <div className="flex justify-start gap-4">
             <div className="flex items-center flex-col gap-1">
@@ -217,7 +196,7 @@ export default function How() {
           </div>
         </section>
 
-        <section className="px-9">
+        <section className="px-9 pt-20">
           <Swiper images={swiper} />
         </section>
       </main>

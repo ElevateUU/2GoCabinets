@@ -17,6 +17,8 @@ import card1 from "@/public/cards/card1.webp";
 import card2 from "@/public/cards/card2.webp";
 import card3 from "@/public/cards/card3.webp";
 
+import Crew from "@/public/crew/crew.jpg"
+
 export default function How() {
 
   const cards = CARDS_HOW
@@ -163,7 +165,7 @@ export default function How() {
               1000+ rooms renovated on the 2Go platform
             </h4>
             <div className="flex items-center gap-2">
-              <a href="" className="underline text-color5">
+              <a href="/gallery" className="underline text-color5">
                 Explore Project Gallery
               </a>
               <button className="rounded-full border-color5 border w-8 h-8 flex items-center justify-center">
@@ -212,7 +214,7 @@ export default function How() {
         </section>
 
         <section className="px-9 py-10 bg-how">
-          <div className="flex flex-row">
+          <div className="flex flex-row justify-between w-full">
             <div className="flex flex-col justify-center gap-6">
               <h2 className="text-color4 text-4xl">Build with the best</h2>
               <p className="text-xl font-roboto-mono w-[695px] text-gray">
@@ -224,13 +226,13 @@ export default function How() {
                 Get Your Estimate
               </button>
             </div>
-            <div className="relative h-[700px] w-full rounded-2xl overflow-hidden">
+            <div className="relative h-[700px] rounded-2xl overflow-hidden">
               <Image
-                src={Homeowner}
+                src={Crew}
                 alt=""
-                layout="fill"
                 objectFit="cover"
                 className="rounded-2xl"
+                width={520}
               />
             </div>
           </div>

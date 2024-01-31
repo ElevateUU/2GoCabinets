@@ -21,6 +21,10 @@ import Done from "@/public/assets/done.svg";
 import Kitchen1 from "@/public/cards/Slider/Feher_Kitchen.jpg"
 import Kitchen2 from "@/public/cards/Slider/Keire_Bathroom.jpg";
 import Kitchen3 from "@/public/cards/Slider/mod6_carousel_2.jpg";
+import Review1 from "@/public/reviews/Review1.png"
+import Review2 from "@/public/reviews/Review2.png"
+import Review3 from "@/public/reviews/Review3.png"
+import Review4 from "@/public/reviews/Review4.png"
 
 export default function Home() {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -54,11 +58,11 @@ export default function Home() {
         <section className="px-9">
           <div className="flex flex-col items-center md:items-start md:flex-row justify-between flex-grow pb-10 pt-16">
             <h4 className="text-4xl text-center md:text-left">
-              50+ Kitchens Renovated with our 2Go System <br />
+              50+ Kitchens Renovated with our 2Go Process <br />
               <p className="text-xl">See what customers have to say!</p>
             </h4>
             <div className="flex items-center gap-2 justify-center md:justify-start">
-              <a href="" className="underline text-color5">
+              <a href="/gallery" className="underline text-color5">
                 Explore Project Gallery
               </a>
               <button className="rounded-full border-color5 border w-8 h-8 flex items-center justify-center">
@@ -121,20 +125,20 @@ export default function Home() {
 
           <div className="px-9 pt-10 flex flex-col md:flex-row justify-between space-y-4 md:space-y-0">
             <ReviewCard
-              imageSrc={Kitchen1}
-              name="Tina L."
+              imageSrc={Review1}
+              name="Veniamin Bedeshko"
               stars={5}
               description="“Everything was seamless when I worked with Block. I was actually kind of shocked! I really appreciated being able to save time and not make multiple trips to the hardware store.”"
             />
             <ReviewCard
-              imageSrc={Kitchen2}
-              name="John D."
+              imageSrc={Review3}
+              name="Dima Pokhilchuk"
               stars={5}
               description="“Compared to what we’ve done before, the build was so much more seamless and communicative. Our contractor was amazing to work with, was extremely responsive and thoughtful throughout the whole process.”"
             />
             <ReviewCard
-              imageSrc={Kitchen3}
-              name="Anna S."
+              imageSrc={Review4}
+              name="Charlie Rummer"
               stars={5}
               description="“The quality of the work is so incredible, the look is so incredible. I love it. I’m a first time homeowner and renovator, so a big part of the allure of 2Go was having someone experienced help me.”"
             />

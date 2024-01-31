@@ -17,7 +17,8 @@ export default function sendmail(req: NextApiRequest, res: NextApiResponse) {
 
   const toHostMailData = {
     from: `${req.body.firstName} ${req.body} ${req.body.email}`,
-    to: "alexb@sembrodesigns.com",
+    // to: "alexb@sembrodesigns.com",
+    to: "myroslav.kogut2007@gmail.com",
     subject: `New Lead From Contact Form`,
     text: "Sent from:" + req.body.email,
     html: `

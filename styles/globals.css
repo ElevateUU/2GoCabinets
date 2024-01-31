@@ -296,7 +296,31 @@ body::-webkit-scrollbar-thumb {
   opacity: 0.7; /* You can change the opacity if needed */
 }
 
+.masonry-grid {
+  column-count: 1;
+  column-gap: 1rem;
+}
 
- /* .bordered {
-  border-image-source: ;
- }  */
+@media (min-width: 640px) { /* Tailwind sm breakpoint */
+  .masonry-grid {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 768px) { /* Tailwind md breakpoint */
+  .masonry-grid {
+    column-count: 3;
+  }
+}
+
+@media (min-width: 1024px) { /* Tailwind lg breakpoint */
+  .masonry-grid {
+    column-count: 4;
+  }
+}
+
+.masonry-grid-item {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+}
+

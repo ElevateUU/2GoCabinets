@@ -1,7 +1,8 @@
 import React from "react";
+import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
-import Cabinet from "@/public/Renovation/753A8826.jpg"
-import Countertop from "@/public/Renovation/753A8837.jpg"
+import Cabinet from "@/public/Renovation/753A8826.jpg";
+import Countertop from "@/public/Renovation/753A8837.jpg";
 
 import { selectorProps } from "@/interfaces/cardProps";
 
@@ -11,6 +12,7 @@ const Card: React.FC<selectorProps> = ({
   description,
   src,
   alt,
+  learnMoreUrl,
 }) => (
   <div className="rounded-lg w-full md:w-[24rem]">
     <h2 className="text-gray text-center text-xl md:text-2xl pb-8">{title}</h2>
@@ -23,13 +25,13 @@ const Card: React.FC<selectorProps> = ({
         />
       </div>
       <div className="flex flex-col items-center mt-10">
-        <p className="text-xs text-center">
-          {buildTime} DAY AVERAGE BUILD
-        </p>
+        <p className="text-xs text-center">{buildTime} DAY AVERAGE BUILD</p>
         <p className="mt-2.5 text-center">{description}</p>
-        <button className="bg-color4 text-white text-sm text-center py-2 px-4 w-[41%] h-[39px] my-7">
-          Learn more
-        </button>
+        <Link className="bg-color4 text-white text-sm text-center py-2 px-4 w-[41%] h-[39px] my-7" href={learnMoreUrl} passHref>
+          <button>
+            Learn more
+          </button>
+        </Link>
       </div>
     </div>
   </div>
@@ -48,6 +50,7 @@ const BuildingSection: React.FC = () => (
           description="Finish your dream kitchen with our beautiful selection of countertops"
           src={Countertop}
           alt="Card image"
+          learnMoreUrl="/commingSoon"
         />
         <Card
           title="Cabinets"
@@ -55,6 +58,7 @@ const BuildingSection: React.FC = () => (
           description="Build your dream kitchen with our wide selection of cabinets"
           src={Cabinet}
           alt="Card image"
+          learnMoreUrl="/cabinets"
         />
       </div>
     </div>

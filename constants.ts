@@ -3,6 +3,16 @@ import Kitchen2 from "@/public/cards/Slider/Keire_Bathroom.jpg";
 import Kitchen3 from "@/public/cards/Slider/mod6_carousel_2.jpg";
 import Kitchen4 from "@/public/cards/Slider/Riggen_Bathroom.jpg";
 
+import Gal1 from "@/public/gallery/gal1.jpg";
+import Gal2 from "@/public/gallery/gal2.jpg";
+import Gal3 from "@/public/gallery/gal3.jpg";
+import Gal4 from "@/public/gallery/gal4.jpg";
+import Gal5 from "@/public/gallery/gal5.jpg";
+import Gal6 from "@/public/gallery/gal6.jpg";
+import Gal7 from "@/public/gallery/gal7.jpg";
+import Gal8 from "@/public/gallery/gal8.jpg";
+import Gal9 from "@/public/gallery/gal9.jpg";
+
 export const SOCIAL_MEDIA_ICONS = [
   {
     name: "Facebook",
@@ -84,4 +94,16 @@ export const CARDS_HOW = [
       "Once plans are finalized, our project manager will stay on top of work-flow to make sure we’re in and out within 10 days. Communication will be our main goal so that our expert craftsman delivery a quality service, FAST. ",
     image: "/process/Man.png",
   },
+];
+
+export const GALLERY_IMAGES = [
+  Gal1,
+  Gal3,
+  Gal4,
+  Gal5,
+  Gal6,
+  Gal7,
+  Gal8,
+  Gal9,
+  Gal2,
 ];
