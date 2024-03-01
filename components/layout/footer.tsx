@@ -33,7 +33,7 @@ const footer = () => {
             ))}
           </nav>
           <div className="flex flex-col gap-4 mt-4 lg:mt-0">
-            <div className="flex gap-3">
+            <div className="flex justify-center sm:flex gap-3">
               {SOCIAL_MEDIA_ICONS.map((icon) => (
                 <Link
                   className="flex items-center justify-center px-2 bg-icons rounded-full w-8 h-8"
@@ -58,7 +58,7 @@ const footer = () => {
             </div>
             <div className="flex flex-col items-center lg:items-start">
               <p className="text-xs text-gray">Phone</p>
-              <Link href={""}>
+              <Link href="tel:3802222085">
                 <p className="text-color4">(380) 222-2085</p>
               </Link>
             </div>

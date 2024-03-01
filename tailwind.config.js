@@ -51,7 +51,8 @@ module.exports = {
         'footercolor': '#EFEBE9',
         'icons': '#CBC3BA',
         'grayborder': '#dcd5ce',
-        'message': '#e7e7e7'
+        'message': '#e7e7e7',
+        'header_info': '#f0f2f5'
       },
       fontFamily: {
         'roboto-mono': ['Roboto Mono', 'monospace'],
