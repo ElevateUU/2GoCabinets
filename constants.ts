@@ -17,17 +17,17 @@ export const SOCIAL_MEDIA_ICONS = [
   {
     name: "Facebook",
     src: "/icons/facebook.png",
-    href: "https://www.facebook.com/BuchGroup/",
+    href: "https://www.facebook.com/",
   },
   {
     name: "Instagram",
     src: "/icons/instagram.png",
-    href: "https://www.instagram.com/thebuchgroup/",
+    href: "https://www.instagram.com/2gocabinets/",
   },
   {
     name: "Chat",
     src: "/icons/whatsapp.png",
-    href: "https://www.tiktok.com/@buchcast",
+    href: "https://www.tiktok.com",
   },
 ];
 
