@@ -6,7 +6,6 @@ import { IMAGES, STATES, DESCRIPTIONS, CARDS } from "@/constants";
 import Slider from "@/components/slider";
 import ReviewCard from "@/components/reviewbox";
 import Swiper from "@/components/swiper";
-import SplashScreen from "@/components/splashScreen";
 import Layout from "@/components/layout/layout";
 
 import customCabinets from "@/public/cabinets/Custom Slide.jpg";
